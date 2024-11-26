@@ -77,12 +77,14 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'awsomeDB',                
+        'NAME': 'awsome_db',                
         'USER': 'admin',                        
         'PASSWORD': 'votmdnjem123',                     
-        'HOST': 'awsome-mysqldb-1.c5som0s0mo4q.us-east-1.rds.amazonaws.com',   
-        #'HOST': 'db-cluster-01.cluster-ro-c5som0s0mo4q.us-east-1.rds.amazonaws.com',                
-        'PORT': '3306'                        
+        'HOST': 'awsome-aurora-mysqldb-02.cluster-c5som0s0mo4q.us-east-1.rds.amazonaws.com',                   
+        'PORT': '3306',
+        'OPTIONS': {
+            'ssl': {'verify_cert': False},  # SSL 검증 비활성화
+        },
     }
 }
 
